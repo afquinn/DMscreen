@@ -15,7 +15,8 @@ feature 'user registers', %Q{
   scenario 'provide valid registration information' do
     visit new_user_registration_path
 
-    fill_in 'Email', with: 'john@example.com'
+    fill_in 'User name', with: 'johnsnow'
+    fill_in 'Email', with: 'jon@theWall.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
 
@@ -23,6 +24,7 @@ feature 'user registers', %Q{
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('Sign Out')
+    expect(page).to have_content('johnsnow')
   end
 
   scenario 'provide invalid registration information' do
