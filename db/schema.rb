@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206170843) do
+ActiveRecord::Schema.define(version: 20180207200733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,24 +19,18 @@ ActiveRecord::Schema.define(version: 20180206170843) do
     t.string "name"
     t.string "description"
     t.string "cover_photo"
-    t.integer "dungeon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "dm_id", null: false
   end
 
-  create_table "parties", force: :cascade do |t|
-    t.bigint "player_characters_id"
-    t.bigint "campaigns_id"
-    t.index ["campaigns_id"], name: "index_parties_on_campaigns_id"
-    t.index ["player_characters_id"], name: "index_parties_on_player_characters_id"
-  end
-
-  create_table "player_characters", force: :cascade do |t|
+  create_table "pcs", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.bigint "campaign_id", null: false
     t.string "name", null: false
     t.string "avatar"
-    t.integer "character_sheet"
-    t.index ["user_id"], name: "index_player_characters_on_user_id"
+    t.index ["campaign_id"], name: "index_pcs_on_campaign_id"
+    t.index ["user_id"], name: "index_pcs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

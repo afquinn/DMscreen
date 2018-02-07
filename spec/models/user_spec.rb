@@ -6,7 +6,7 @@ end
 
 RSpec.describe User, type: :model do
 
-  it { should have_many :player_characters }
+  it { should have_many :pcs }
 
 
   it { should have_valid(:user_name).when('John') }

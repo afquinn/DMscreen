@@ -1,4 +1,6 @@
 class Campaign < ApplicationRecord
-  has_many :parties
-  has_many :player_characters, through: :parties
+  has_many :pcs
+  has_many :users, through: :pcs
+
+  belongs_to :dm, class_name: "User"
 end
