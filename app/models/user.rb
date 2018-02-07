@@ -6,5 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :player_characters
+  has_many :pcs
+  has_many :campaigns, through: :pcs
+
+  has_many :campaign_modules, foreign_key: :dm_id, class_name: "Campaign"
+
+
 end

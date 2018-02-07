@@ -1,6 +1,26 @@
 <% if current_user %>
-<h1> Welcome <%= current_user.user_name %> </h1>
-<h3> What adventure do you wish to pursure?</h3>
-<h5> When you get brave....insert your react tiles here</h5>
+  <h1> Welcome <%= current_user.user_name %> </h1>
+  <h3> What adventure do you wish to pursure?</h3>
+  <h5> (When you get brave....insert your react tiles here)</h5>
+
+  <h3>Campaigns you are in</h3>
+
+    <% if current_user.pcs  %>
+      <% current_user.pcs.each do |character| %>
+        <li><%= link_to "#{character.campaign.name}", campaign_path(character.campaign.id)  %></li>
+        <p><%= "Playing as: #{character.name}" %></p>
+      <% end %>
+    <% end %>
+
+  <h3>Campaigns you are running</h3>
+
+    <% if current_user.campaign_modules  %>
+      <% current_user.campaign_modules.each do |campaign| %>
+        <li><%= link_to "#{campaign.name}", campaign_path(campaign.id)  %></li>
+      <% end %>
+    <% end %>
+
+  <%= link_to "Join a campaign", campaigns_path %>
+  <%= link_to "Create a campaign", campaigns_path %>
 
 <% end %>
