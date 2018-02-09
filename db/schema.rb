@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207200733) do
+ActiveRecord::Schema.define(version: 20180208192002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abutters", force: :cascade do |t|
+    t.bigint "ingress_id"
+    t.bigint "egress_id"
+    t.index ["egress_id"], name: "index_abutters_on_egress_id"
+    t.index ["ingress_id"], name: "index_abutters_on_ingress_id"
+  end
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -24,6 +31,20 @@ ActiveRecord::Schema.define(version: 20180207200733) do
     t.integer "dm_id", null: false
   end
 
+  create_table "dungeon_campaigns", force: :cascade do |t|
+    t.bigint "campaign_id", null: false
+    t.bigint "dungeon_id", null: false
+    t.index ["campaign_id"], name: "index_dungeon_campaigns_on_campaign_id"
+    t.index ["dungeon_id"], name: "index_dungeon_campaigns_on_dungeon_id"
+  end
+
+  create_table "dungeons", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "cover_picture"
+    t.string "description"
+    t.string "master_floor_plan"
+  end
+
   create_table "pcs", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "campaign_id", null: false
@@ -31,6 +52,17 @@ ActiveRecord::Schema.define(version: 20180207200733) do
     t.string "avatar"
     t.index ["campaign_id"], name: "index_pcs_on_campaign_id"
     t.index ["user_id"], name: "index_pcs_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.bigint "dungeon_id"
+    t.integer "room_id"
+    t.string "description"
+    t.string "picture"
+    t.string "traps"
+    t.string "monsters"
+    t.string "treasure"
+    t.index ["dungeon_id"], name: "index_rooms_on_dungeon_id"
   end
 
   create_table "users", force: :cascade do |t|

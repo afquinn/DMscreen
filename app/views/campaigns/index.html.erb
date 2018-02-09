@@ -8,6 +8,9 @@
     <p> DM: <%= campaign.dm.user_name %><p>
     Players: <% campaign.pcs.each do |pc|%>
       <p><%= "#{pc.user.user_name} as: #{pc.name}" %></p>
+      <% if pc.avatar %>
+        <%= image_tag "#{pc.avatar}" %>
+      <% end %>
     <% end %>
 
   <% end %>
