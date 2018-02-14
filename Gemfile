@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'fog-aws'
 gem 'carrierwave'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem "dotenv-rails"

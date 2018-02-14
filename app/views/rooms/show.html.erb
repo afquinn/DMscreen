@@ -1,24 +1,2 @@
-<h1><%=  @dungeon.name%></h1>
-<div class=floorplan>
-<%= image_tag @room.picture %>
+<div id="app">
 </div>
-<p>Room Description: <%= @room.description %></p>
-
-
-
-<% if @room.traps %>
-  <p> Traps: <%= @room.traps %></p>
-<% end %>
-
-<% if @room.monsters %>
-  <p> Monsters: <%= @room.monsters %></p>
-<% end %>
-
-<% if @room.treasure %>
-  <p> Treasure: <%= @room.treasure %></p>
-<% end %>
-
-<p> Other Rooms:</p>
-<% @room.egresses.each do |path| %>
-<li><%= link_to "#{path.id}", room_path(path.id) %></li>
-<% end %>
