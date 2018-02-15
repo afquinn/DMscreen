@@ -9,3 +9,58 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.pc-show-tile {
+  height: 400px;
+  width: 600px;
+  color: white;
+  border: 5px solid yellow;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow: hidden;
+  background-image: url(https://s3.amazonaws.com/dmscreen/site/Wood-Pattern.jpeg);
+  background-size: contain;
+
+}
+.pc-thumb {
+  height: 200px;
+  width: 200x;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden
+}
+
+.campaign-show-tile {
+  height: 400px;
+  width: 600px;
+  border: 5px solid green;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow: hidden
+}
+
+.pc-mini-thumb {
+  height: 60px;
+  width: 60px;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  margin-right: 1px;
+  margin-left: 1px;
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow: hidden
+}

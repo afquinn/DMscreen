@@ -7,4 +7,15 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+
+console.log("You hit app/javascript/packs/application.js")
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../App';
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+
+);

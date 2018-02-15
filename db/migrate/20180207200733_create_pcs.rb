@@ -5,6 +5,10 @@ class CreatePcs < ActiveRecord::Migration[5.1]
       t.belongs_to :campaign, null: false
       t.string :name, null: false
       t.string :avatar
+      t.integer :level, null: false, default: 1
+      t.string :character_class
+      t.string :bio
+
     end
   end
 end

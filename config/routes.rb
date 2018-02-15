@@ -1,11 +1,32 @@
 Rails.application.routes.draw do
-  root 'homes#index'
-  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :campaigns, only: [:index, :show]
-  resources :dungeons, only: [:show] do
-    resources :rooms, only: [:show]
+  root 'pcs#index'
+  devise_for :users, :controllers => { :registrations => 'users' }
+
+  get '/pcs', to: 'pcs#index'
+  get '/pcs/:id', to: 'pcs#index'
+  get '/campaign/:id/dungeons/:id/rooms/:id', to: 'rooms#index'
+  get '/campaign/:id/dungeons/:id/rooms/:id', to: 'rooms#show'
+
+
+
+
+  namespace :api do
+    namespace :v1 do
+      resources :campaigns, only: [:index, :show]do
+        resources :dungeons, only: [:index, :show] do
+          resources :rooms, only: [:index, :show]
+        end
+      end
+      resources :users, only: [:index, :update]
+      resources :pcs, only: [:index, :show]
+    end
   end
-  resources :rooms, only: [:show]
+
+  resources :campaigns, only: [:index, :show]do
+    resources :dungeons, only: [:index, :show] do
+      resources :rooms, only: [:index, :show]
+    end
+  end
 end

@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20180208192002) do
     t.bigint "campaign_id", null: false
     t.string "name", null: false
     t.string "avatar"
+    t.integer "level", default: 1, null: false
+    t.string "character_class"
+    t.string "bio"
     t.index ["campaign_id"], name: "index_pcs_on_campaign_id"
     t.index ["user_id"], name: "index_pcs_on_user_id"
   end
