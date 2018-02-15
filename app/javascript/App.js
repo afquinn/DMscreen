@@ -9,7 +9,7 @@ const App = (props) => {
 return(
   <Router history={browserHistory}>
     <Route path='/' component={PcIndexContainer} />
-    <Route path='campaigns/:campaign_id/dungeons/:dungeon_id/rooms/:room_id' component={RoomShowContainer} />
+    <Route path='/campaigns/:campaign_id/dungeons/:dungeon_id/rooms/:room_id' component={RoomShowContainer} />
 
   </Router>
 )}
