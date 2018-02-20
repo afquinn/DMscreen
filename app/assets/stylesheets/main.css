@@ -1,7 +1,24 @@
-.profile {
+body{
+  text-align: center;
+  font-family: 'IM Fell DW Pica', serif;
+  background-image: url('https://s3.amazonaws.com/dmscreen/site/fantasy+islands.jpg');
+
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+
+
+}
+h1, h2, h3, h4, h5{
+  font-family: 'IM Fell DW Pica SC', serif;
+
+}
+
+/* from the ruby file */
+/* .profile {
   height: 200px;
   width: 250px;
-  border: 1px solid #ddd;
+  border: 10px solid red;
   border-radius: 4px;
   margin-right: 5px;
   margin-left: 5px;
@@ -9,69 +26,297 @@
   margin-top: 5px;
   margin-bottom: 5px;
   overflow: hidden;
-}
+} */
 
 
 .homes-screen-tiles{
-  position: relative;
-  display: inline-block;
+  width: 700px;
+  position: center;
   text-align: center;
-  border-radius: 5px;
-  margin: 25px;
-  border: 1px solid blue;
+  display: block;
+  margin: 0 auto;
   padding: 5px;
-
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  background-color: #133547;
 }
 
 
 .campaign-player-thumbs{
-border: 3px solid black;
-padding: 1px 1px;
-margin-top: 2px;
+  border: 3px solid #133547;
+
+  margin-top: 2px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: fit-content;
+  padding-left: 3%;
+  padding-right: 3%;
 
 }
 
-.dungeon-room-tile{
-  position: relative;
-  display: inline-block;
+
+/* all the children images in master-floor-plan, feature-tile, and current-room-tile are centered */
+.room-body-page{
+  width: 1100px;
+  height: 875px;
   text-align: center;
-  border-radius: 5px;
-  margin: 25px;
-  border: 1px solid blue;
-  background-color: white;
-  padding: 5px;
-  float: left;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #133547;
+  padding-left: 40px;
+  padding-right: 40px;
+
+
 }
+
+
 .adjacent-room-tile{
   height:100px;
   width: 100px;
-  float: left;
-  border: 3px solid black;
+  border: 3px solid #C9B368;
   display: inline-flex;
   margin: 5px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-
+  float: left;
 }
 
 .current-room-tile{
-
-  height:400px;
-  width: 400px;
-  border: 3px solid black;
-  object-fit: contain;
-  background-size: cover;
-/* float: left; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1px 0;
+  text-align: center;
 }
 
-.feature-tile{
-
+.rm-feature-tile{
+  height:300px;
+  width: 1003px;
+  border: 8px solid #C9B368;
+  object-fit: contain;
+  background-size: cover;
+  background-color: #E6DDCD;
+  padding: 3px;
+  text-align: left;
+  margin: 3px 6px 3px 3px;
 
 }
 
 .catagooory{
-  height:20px;
-  width: 40px;
-  background-color: white;
-  border: 2px solid black;
+  height:60px;
+  background-color: #C9B368;
+  border: 3px solid #061632;
+  margin-right: 30px;
+  font-size: 150%;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
+}
+
+.rm-pic-tile{
+  display: block;
+  height:300px;
+  width: 300px;
+
+
+  border: 8px solid #C9B368;
+  object-fit: contain;
+  background-color: gray;
+  background-size: cover;
+  float: left;
+  overflow: hidden;
+  background-position: center;
+  margin:3px;
+
+
+}
+
+.master-floor-plan{
+  text-align: center;
+  display:block;
+
+  height: 300px;
+  width: 700px;
+  border: 8px solid #C9B368;
+
+  overflow: hidden;
+  background-color: gray;
+  margin: 3px;
+}
+
+.master-floor-plan-pic{
+  display: block; /*for the img inside your div */
+
+  text-align: center;
+
+}
+
+.dungeon-name{
+font-size: 300%;
+text-align: center;
+max-width: fit-content;
+border: 5px solid #C9B368;
+background-color: #E6DDCD;
+margin-right: auto;
+margin-left: auto;
+padding-left: 25px;
+padding-right: 25px;
+}
+
+.adjacent-rooms{
+  clear: left;
+  font-size: 200%;
+  text-align:left;
+}
+
+
+#show
+ .floorplan {
+  height: 300px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.pc-show-tile {
+
+  width: 600px;
+
+  border: 5px solid #C9B368;
+  background-color: #2A6363;
+  border-radius: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow: hidden;
+  background-size: contain;
+}
+.pc-show-tile-name{
+  border: 5px solid #C9B368;
+  background-color: #E6DDCD;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: fit-content;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.campaign-tile-name{
+  background-color: #E6DDCD;
+  border: 5px solid #C9B368;
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: fit-content;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.pc-show-tile-contents{
+column-count: 2;
+margin-right: auto;
+margin-left: auto;
+
+padding: 5px;
+
+}
+.pc-show-tile-avatar-pic{
+  border: 8px solid #C9B368;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: fit-content;
+}
+
+.pc-show-tile-component{
+  border: 3px solid #C9B368;
+  margin: 4px;
+  background-color: #E6DDCD;
+
+
+
+}
+
+.pc-thumb {
+  height: 200px;
+  width: 200x;
+
+
+  overflow: hidden
+}
+
+.campaign-show-tile {
+
+  width: 600px;
+  background-color: #2A6363;
+
+  background-size: contain;
+    border: 5px solid #C9B368;
+  border-radius: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow: hidden
+}
+
+.pc-mini-thumb {
+  height: 60px;
+  width: 60px;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  margin-right: 1px;
+  margin-left: 1px;
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow: hidden
+}
+
+.title-tile{
+  width: 600px;
+  background-color: #E6DDCD;
+  border: 5px solid #C9B368;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.log-in-tile{
+  width: 600px;
+  background-color: #E6DDCD;
+  border: 5px solid #C9B368;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.campaign-dungeon-link{
+  background-color: #E6DDCD;
+  border: 5px solid #C9B368;
+  font-size: 125%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: fit-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.adjacent-rooms-title{
+  background-color: #E6DDCD;
+  border: 5px solid #C9B368;
+  max-width: fit-content;
+  margin-left: 3px;
 }

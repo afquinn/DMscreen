@@ -5,12 +5,14 @@ class RoomFeatureTile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentFeature: "description",
-      featuresPresent: []
+      currentFeature: "description"
     }
     this.handleFeatureClick = this.handleFeatureClick.bind(this)
   }
 
+  componentWillReceiveProps() {
+    this.setState({ currentFeature: "description" })
+  }
 
   handleFeatureClick(event) {
     let feature = event.target.id
@@ -22,33 +24,11 @@ class RoomFeatureTile extends Component {
     }
   }
 
-  componentWillMount(){
-    if (this.props.treasure){
-      let currentFeatures = this.state.featuresPresent
-      currentFeatures.push("treasure")
-      this.setState({ featuresPresent: currentFeatures})
-    }
-
-    if (this.props.monsters){
-      let currentFeatures = this.state.featuresPresent
-      currentFeatures.push("monsters")
-      this.setState({ featuresPresent: currentFeatures})
-    }
-
-    if (this.props.traps){
-      let currentFeatures = this.state.featuresPresent
-      currentFeatures.push("traps")
-      this.setState({ featuresPresent: currentFeatures})
-    }
-
-    if (this.props.description){
-      let currentFeatures = this.state.featuresPresent
-      currentFeatures.push("description")
-      this.setState({ featuresPresent: currentFeatures})
-    }
-  }
-
   render() {
+      console.log("RoomFeature:")
+      console.log(this.state)
+
+
       let featuredContent;
       if (this.state.currentFeature ==="description") {
         featuredContent = this.props.description
@@ -61,7 +41,7 @@ class RoomFeatureTile extends Component {
       }
 
 
-      let presentFeatures = this.state.featuresPresent
+      let presentFeatures = this.props.presentFeatures
       let featureButtons;
       if (featuredContent){
 

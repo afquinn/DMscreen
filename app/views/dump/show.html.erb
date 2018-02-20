@@ -1,27 +1,8 @@
-<h1><%=  @dungeon.name%></h1>
-<div class=floorplan>
-<%= image_tag @room.picture %>
+<h1><%= @dungeon.name %></h1>
+<%= image_tag @dungeon.cover_picture %>
+<p><%= @dungeon.description %></p>
+<h3>Full Dungeon Map. (DMs Only)</h3>
+
+<div class=img >
+  <%= image_tag @dungeon.master_floor_plan %>
 </div>
-<p>Room Description: <%= @room.description %></p>
-
-
-
-<% if @room.traps %>
-  <p> Traps: <%= @room.traps %></p>
-<% end %>
-
-<% if @room.monsters %>
-  <p> Monsters: <%= @room.monsters %></p>
-<% end %>
-
-<% if @room.treasure %>
-  <p> Treasure: <%= @room.treasure %></p>
-<% end %>
-
-<p> Other Rooms:</p>
-<% @room.egresses.each do |path| %>
-<li><%= link_to "#{path.id}", room_path(path.id) %></li>
-<% end %>
-
- <!-- The old link to the 1st room
-<%= link_to "FINALLY ENTER THE DUNGEON", api_v1_dungeon_room_path(@dungeon.rooms.first.id) %> -->
