@@ -8,7 +8,6 @@ class Api::V1::RoomsController < ApplicationController
   end
 
   def show
-    
     room = Room.find(params[:id])
     render json: room
   end

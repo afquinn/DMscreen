@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/pcs/:id', to: 'pcs#index'
   get '/campaign/:id/dungeons/:id/rooms/:id', to: 'rooms#index'
   get '/campaign/:id/dungeons/:id/rooms/:id', to: 'rooms#show'
+  get '/campaign/:id/dungeons/:id/', to: 'dungeons#show'
 
 
 
@@ -24,9 +25,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :campaigns, only: [:index, :show]do
+  resources :campaigns, only: [:index, :show] do
     resources :dungeons, only: [:index, :show] do
       resources :rooms, only: [:index, :show]
     end
   end
+
+  resources :campaigns, only: [:index, :show] do
+    resources :dungeons, only: [:index, :show]
+  end
+
 end
