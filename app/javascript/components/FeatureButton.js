@@ -4,8 +4,8 @@ const FeatureButton = (props) => {
 
   return(
 
-    <span><a className="button catagooory" id={props.name} onClick = {props.handleClick}>{props.name}</a></span>
+    <span><a className="catagooory" id={props.name} onClick = {props.handleClick}>{props.name}</a></span>
   )
 }
-
+// button classs
 export default FeatureButton

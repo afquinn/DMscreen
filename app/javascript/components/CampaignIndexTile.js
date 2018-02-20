@@ -1,5 +1,7 @@
 import React from 'react'
 import PcThumb from './PcThumb'
+import { Link } from 'react-router'
+
 
 const CampaignIndexTile = (props) => {
 
@@ -17,20 +19,31 @@ const CampaignIndexTile = (props) => {
     )
   })
 
+  // <Link to={`/campaigns/${props.id}/dungeons/${props.dungeon_id}`}>
+
   return(
 
     <div id="campaign-tile">
-
       <div className="campaign-show-tile">
+        <div className="campaign-tile-name">
+          <h2>{props.name}</h2>
+        </div>
 
-        <h2>{props.name}</h2>
-        <p> Description: {props.description} </p>
-        <p> Players: </p>
-        {pcComponents}
-        <p> Dungeon: {props.dungeon} </p>
+        <div className="pc-show-tile-component">
+          <p> Description: {props.description} </p>
+        </div>
 
+        <div className="pc-show-tile-component">
+          <p> Players: </p>
+          {pcComponents}
+        </div>
+
+        <div className="campaign-dungeon-link">
+          <Link to={`/campaigns/${props.id}/dungeons/${props.dungeon_id}/rooms/1`}>
+            <p> Dungeon: {props.dungeon} </p>
+          </Link>
+        </div>
       </div>
-
     </div>
 
   )

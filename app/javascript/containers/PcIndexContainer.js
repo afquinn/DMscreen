@@ -14,11 +14,9 @@ class PcIndexContainer extends Component {
   }
 
   componentDidMount() {
-    console.log("Fetching")
     fetch('/api/v1/pcs')
 
     .then(response => {
-      console.log(response)
         if (response.ok) {
           return response;
         } else {
@@ -69,73 +67,82 @@ class PcIndexContainer extends Component {
 pc
 
   render() {
+    if (this.state.user.current_user){
+      let pcs = this.state.allPcs
+      let campaigns = this.state.allCampaigns
+      let pcArray;
+      let dmArray;
+
+      if (pcs.length > 0) {
+        pcArray = pcs.map((pc) => {
+          // console.log(this.state.user.current_user)
+          // console.log(pc.user)
+          if (this.state.user.current_user.user_name === pc.user.user_name) {
+            return(
+              <PcIndexTile
+              name={pc.name}
+              key={pc.id}
+              id={pc.id}
+              avatar={pc.avatar}
+              level= {pc.level}
+              character_class ={pc.character_class}
+              campaign={pc.campaign.name}
+              dm={pc.dm}
+              bio={pc.bio}
+              />
+            )
+          }
+        })
+      }
 
 
-    let pcs = this.state.allPcs
-    let campaigns = this.state.allCampaigns
+      // This is showing the people in the campaings I am running I need to vcreate a campaigns sho tile
+      if (campaigns.length > 0) {
+        dmArray = campaigns.map((campaign) => {
 
+          if (this.state.user.current_user.email === campaign.dm.email) {
+            return(
 
+              <CampaignIndexTile
+              key={campaign.id}
+              id={campaign.id}
+              name={campaign.name}
+              description={campaign.description}
+              pcs = {campaign.pcs}
+              // fix this to account for past dungeons at somepoint
+              dungeon = {campaign.dungeons[0].name}
+              dungeon_id = {campaign.dungeons[0].id}
+              />
 
+            )
+          }
+        })
+      }
 
-    let pcArray;
-    let dmArray;
+      return(
+        <div>
+          <div className="homes-screen-tiles">
+            <div className="title-tile">
+              <h1>Campaigns you are in</h1>
+            </div>
+            { pcArray }
+            <div className="title-tile">
+              <h1>Campaigns you are running</h1>
+            </div>
+            { dmArray }
+          </div>
 
-    if (pcs.length > 0) {
-      pcArray = pcs.map((pc) => {
-        // console.log(this.state.user.current_user)
-        // console.log(pc.user)
-        if (this.state.user.current_user.user_name === pc.user.user_name) {
-          return(
-            <PcIndexTile
-            name={pc.name}
-            key={pc.id}
-            id={pc.id}
-            avatar={pc.avatar}
-            level= {pc.level}
-            character_class ={pc.character_class}
-            campaign={pc.campaign.name}
-            dm={pc.dm}
-            bio={pc.bio}
-            />
-          )
-        }
-      })
-    }
-
-
-    // This is showing the people in the campaings I am running I need to vcreate a campaigns sho tile
-    if (campaigns.length > 0) {
-      dmArray = campaigns.map((campaign) => {
-
-        if (this.state.user.current_user.email === campaign.dm.email) {
-          return(
-
-            <CampaignIndexTile
-            name={campaign.name}
-            key={campaign.id}
-            id={campaign.id}
-            description={campaign.description}
-            pcs = {campaign.pcs}
-            // fix this to account for past dungeons at somepoint
-            dungeon = {campaign.dungeons[0].name}
-            />
-
-          )
-        }
-      })
-    }
-
-    return(
-      <div>
-        <div className="homes-screen-tiles">
-        <h1>Campaigns you are in</h1>
-        { pcArray }
-        <h1>Campaigns you are running</h1>
-        { dmArray }
         </div>
+      )
+    } else {
+        return(
+          <div className="title-tile">
+            <h1> Adventure Awaits You</h1>
+            <h5> but you have to log-in/sign-up first</h5>
+          </div>
+        )
+      }
 
-      </div>
-    )
   }
 
 }
