@@ -75,8 +75,7 @@ pc
 
       if (pcs.length > 0) {
         pcArray = pcs.map((pc) => {
-          // console.log(this.state.user.current_user)
-          // console.log(pc.user)
+
           if (this.state.user.current_user.user_name === pc.user.user_name) {
             return(
               <PcIndexTile
@@ -96,7 +95,6 @@ pc
       }
 
 
-      // This is showing the people in the campaings I am running I need to vcreate a campaigns sho tile
       if (campaigns.length > 0) {
         dmArray = campaigns.map((campaign) => {
 
@@ -109,7 +107,6 @@ pc
               name={campaign.name}
               description={campaign.description}
               pcs = {campaign.pcs}
-              // fix this to account for past dungeons at somepoint
               dungeon = {campaign.dungeons[0].name}
               dungeon_id = {campaign.dungeons[0].id}
               />

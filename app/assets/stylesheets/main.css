@@ -2,31 +2,14 @@ body{
   text-align: center;
   font-family: 'IM Fell DW Pica', serif;
   background-image: url('https://s3.amazonaws.com/dmscreen/site/fantasy+islands.jpg');
-
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-
-
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
+
 h1, h2, h3, h4, h5{
   font-family: 'IM Fell DW Pica SC', serif;
-
 }
-
-/* from the ruby file */
-/* .profile {
-  height: 200px;
-  width: 250px;
-  border: 10px solid red;
-  border-radius: 4px;
-  margin-right: 5px;
-  margin-left: 5px;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  overflow: hidden;
-} */
 
 
 .homes-screen-tiles{
@@ -42,17 +25,14 @@ h1, h2, h3, h4, h5{
   background-color: #133547;
 }
 
-
 .campaign-player-thumbs{
   border: 3px solid #133547;
-
   margin-top: 2px;
   margin-right: auto;
   margin-left: auto;
   max-width: fit-content;
   padding-left: 3%;
   padding-right: 3%;
-
 }
 
 
@@ -66,8 +46,6 @@ h1, h2, h3, h4, h5{
   background-color: #133547;
   padding-left: 40px;
   padding-right: 40px;
-
-
 }
 
 
@@ -98,7 +76,6 @@ h1, h2, h3, h4, h5{
   padding: 3px;
   text-align: left;
   margin: 3px 6px 3px 3px;
-
 }
 
 .catagooory{
@@ -109,16 +86,12 @@ h1, h2, h3, h4, h5{
   font-size: 150%;
   padding-left: 10px;
   padding-right: 10px;
-
-
 }
 
 .rm-pic-tile{
   display: block;
   height:300px;
   width: 300px;
-
-
   border: 8px solid #C9B368;
   object-fit: contain;
   background-color: gray;
@@ -127,8 +100,6 @@ h1, h2, h3, h4, h5{
   overflow: hidden;
   background-position: center;
   margin:3px;
-
-
 }
 
 .master-floor-plan{
@@ -171,7 +142,7 @@ padding-right: 25px;
 
 
 #show
- .floorplan {
+.floorplan {
   height: 300px;
   width: 300px;
   border: 1px solid #ddd;
@@ -184,9 +155,7 @@ padding-right: 25px;
 }
 
 .pc-show-tile {
-
   width: 600px;
-
   border: 5px solid #C9B368;
   background-color: #2A6363;
   border-radius: 4px;
@@ -198,6 +167,7 @@ padding-right: 25px;
   overflow: hidden;
   background-size: contain;
 }
+
 .pc-show-tile-name{
   border: 5px solid #C9B368;
   background-color: #E6DDCD;
@@ -207,12 +177,12 @@ padding-right: 25px;
   padding-left: 3%;
   padding-right: 3%;
 }
+
 .campaign-tile-name{
   background-color: #E6DDCD;
   border: 5px solid #C9B368;
   margin-right: auto;
   margin-left: auto;
-
   margin-top: 10px;
   margin-bottom: 10px;
   max-width: fit-content;
@@ -221,13 +191,12 @@ padding-right: 25px;
 }
 
 .pc-show-tile-contents{
-column-count: 2;
-margin-right: auto;
-margin-left: auto;
-
-padding: 5px;
-
+  column-count: 2;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
 }
+
 .pc-show-tile-avatar-pic{
   border: 8px solid #C9B368;
   border-radius: 10px;
@@ -240,26 +209,19 @@ padding: 5px;
   border: 3px solid #C9B368;
   margin: 4px;
   background-color: #E6DDCD;
-
-
-
 }
 
 .pc-thumb {
   height: 200px;
   width: 200x;
-
-
   overflow: hidden
 }
 
 .campaign-show-tile {
-
   width: 600px;
   background-color: #2A6363;
-
   background-size: contain;
-    border: 5px solid #C9B368;
+  border: 5px solid #C9B368;
   border-radius: 4px;
   margin-right: auto;
   margin-left: auto;

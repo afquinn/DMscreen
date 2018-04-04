@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import DungeonShowTile from '../components/DungeonShowTile'
-
 import { Link } from 'react-router'
 
 class DungeonShowContainer extends Component {
@@ -49,8 +47,8 @@ class DungeonShowContainer extends Component {
 
 
   render(){
-    console.log(props)
-    return( <p>HEllo</p>)
+
+    return( <p>Hello</p>)
   }
 }
 
