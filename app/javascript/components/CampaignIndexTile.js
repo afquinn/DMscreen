@@ -19,7 +19,6 @@ const CampaignIndexTile = (props) => {
     )
   })
 
-  // <Link to={`/campaigns/${props.id}/dungeons/${props.dungeon_id}`}>
 
   return(
 
