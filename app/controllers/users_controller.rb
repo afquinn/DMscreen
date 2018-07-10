@@ -7,14 +7,14 @@ class UsersController < Devise::RegistrationsController
     @user = User.new
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to user_session_path(@user)
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     redirect_to user_session_path(@user)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def edit
     @user = User.find(params[:id])
@@ -41,6 +41,6 @@ class UsersController < Devise::RegistrationsController
   private
 
   def user_params
-    params.require(:user).permit(:user_name, :email, :encrypted_password)
+    params.require(:user).permit(:user_name, :email, :password, :encrypted_password)
   end
 end
