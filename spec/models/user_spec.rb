@@ -8,10 +8,8 @@ RSpec.describe User, type: :model do
 
   it { should have_many :pcs }
 
-
   it { should have_valid(:user_name).when('John') }
   it { should_not have_valid(:user_name).when(nil, '') }
-
 
   it { should have_valid(:email).when('jsnow@gmail.com') }
   it { should_not have_valid(:email).when(nil, '', 'jsnow') }

@@ -8,7 +8,6 @@
 // layout file, like app/views/layouts/application.html.erb
 
 
-console.log("You hit app/javascript/packs/application.js")
 
 import React from 'react';
 import ReactDOM from 'react-dom';

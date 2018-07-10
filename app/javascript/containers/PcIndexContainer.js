@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
 import PcIndexTile from '../components/PcIndexTile'
 import CampaignIndexTile from '../components/CampaignIndexTile'
+import { Link } from 'react-router'
 
 class PcIndexContainer extends Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class PcIndexContainer extends Component {
       user: {}
     }
   }
+
 
   componentDidMount() {
     fetch('/api/v1/pcs')
@@ -67,6 +68,7 @@ class PcIndexContainer extends Component {
 pc
 
   render() {
+    console.log("PcIndexContainer")
     if (this.state.user.current_user){
       let pcs = this.state.allPcs
       let campaigns = this.state.allCampaigns
@@ -123,6 +125,11 @@ pc
               <h1>Campaigns you are in</h1>
             </div>
             { pcArray }
+            <div className="new-pc">
+              <Link to={`/pcs/new`}>
+                <p> Make a New PC </p>
+              </Link>
+            </div>
             <div className="title-tile">
               <h1>Campaigns you are running</h1>
             </div>

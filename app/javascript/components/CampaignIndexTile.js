@@ -13,7 +13,7 @@ const CampaignIndexTile = (props) => {
           name = {pc.name}
           level = {pc.level}
           character_class = {pc.character_class}
-          avatar = {pc.avatar}
+          avatar = {pc.avatar.url}
         />
       </div>
     )

@@ -282,3 +282,18 @@ padding-right: 25px;
   max-width: fit-content;
   margin-left: 3px;
 }
+
+
+.pc-new-feature-tile {
+  width: 500px;
+  border: 5px solid #C9B368;
+  background-color: #2A6363;
+  border-radius: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow: hidden;
+  background-size: contain;
+}
