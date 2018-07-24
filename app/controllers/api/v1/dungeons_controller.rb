@@ -8,7 +8,6 @@ class Api::V1::DungeonsController < ApplicationController
   end
 
   def show
-    binding.pry
     dungeon = Dungeon.find(params[:id])
     render json: dungeon
   end

@@ -15,11 +15,7 @@ class Api::V1::PcsController < ApplicationController
    end
   end
 
-  # private
-  #
-  # def set_user
-  #   cookies[:username] = current_user.name || 'guest'
-  # end
+
   private
 
   def pc_params
