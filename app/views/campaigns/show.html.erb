@@ -1,16 +1,2 @@
-<h1><%= @campaign.name %></h1>
-<p>Description: <%= @campaign.description %></p>
-<p>Adventures:
-  <span>
-  <% @campaign.pcs.each do |pc| %>
-  <% if pc.avatar %>
-  <div class=profile>
-    <%= image_tag "#{pc.avatar}" %>
-  </div>
-  <% end %>
-  <p><%= "#{pc.user.user_name} as: #{pc.name}" %></p>
-  <% end %>
-
-</span>
-<p>Current Dungeon: <%= @campaign.dungeons.last.name %>
-  <%= link_to "Enter", dungeon_path(@campaign.dungeons.last.id) %>
+<div id="app">
+</div>

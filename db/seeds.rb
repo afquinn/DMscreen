@@ -4,9 +4,9 @@ user2 = User.create!(user_name: "Bill", email: "B@aol.com", password: "password"
 user3 = User.create!(user_name: "Kate", email: "K@aol.com", password: "password")
 user4 = User.create!(user_name: "Jess", email: "J@gmail.com", password: "password")
 
-campaign1 = Campaign.create!(name: "Alpha Squad", description: "All the biggest badasses from the Fellowship", dm: user1)
-campaign2 = Campaign.create!(name: "Omega Squad", description: "Here are some other guys you may like", dm: user1)
-campaign3 = Campaign.create!(name: "Hobbit Time", description: "Chilling with the little dudes", dm: user4)
+campaign1 = Campaign.create!(name: "Alpha Squad", description: "An intro to DnD", dm: user1)
+# campaign2 = Campaign.create!(name: "Omega Squad", description: "Here are some other guys you may like", dm: user1)
+# campaign3 = Campaign.create!(name: "Hobbit Time", description: "Chilling with the little dudes", dm: user4)
 
 pc1 = Pc.create!(user: user2, name: "Galadriel", campaign: campaign1, avatar: "https://s3.amazonaws.com/dmscreen/pcs/enchntress.jpg", level: 20, character_class:"Sorceress", bio:"Among the eldest and most powerful Eldar.")
 pc2 = Pc.create!(user: user3, name: "Aragorn", campaign: campaign1, avatar: "https://s3.amazonaws.com/dmscreen/pcs/arragorn.jpg", level: 12, character_class:"Ranger", bio:"Last rightful king of the Númenóreans.")

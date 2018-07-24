@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :campaigns, only: [:index, :show]do
+      resources :campaigns, only: [:index, :show, :create]do
         resources :dungeons, only: [:index, :show] do
           resources :rooms, only: [:index, :show]
         end
@@ -25,13 +25,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :campaigns, only: [:index, :show] do
+  resources :campaigns, only: [:index, :create, :show] do
     resources :dungeons, only: [:index, :show] do
       resources :rooms, only: [:index, :show]
     end
   end
 
-  resources :campaigns, only: [:index, :show] do
+  resources :campaigns, only: [:index, :show, :create] do
     resources :dungeons, only: [:index, :show]
   end
 

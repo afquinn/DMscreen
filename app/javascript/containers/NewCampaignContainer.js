@@ -1,21 +1,17 @@
-// when you want to get fancy this looks like a fun place to Start
-// https://github.com/JedWatson/react-select
-
+// THis is a mess...update it soon
 
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import { Link } from 'react-router';
 
-class NewPc extends Component {
+class NewCampaign extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "enter your name here",
-      level: 1,
-      class: "",
-      bio: 'Your story...',
-      campaign: 0,
+      name: "Name your Campaign",
+      description: 'The Quest you heroes face.',
       file: []
+
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,19 +33,13 @@ class NewPc extends Component {
   }
 
   handleSubmit(event) {
+    debugger
     event.preventDefault();
     let formPayload = new FormData()
     formPayload.append("name", this.state.name)
-    formPayload.append("level", this.state.level)
-    formPayload.append("character_class", this.state.class)
-    formPayload.append("bio", this.state.bio)
-    formPayload.append("campaign", this.state.campaign)
-    formPayload.append("avatar", this.state.file[0])
+    formPayload.append("description", this.state.description)
 
-
-    alert('A PC was submitted: ' + this.state.name + '\n' + this.state.level + '\n' + this.state.class + '\n' + this.state.bio);
-
-    fetch('/api/v1/pcs', {
+    fetch('/api/v1/campaigns', {
       credentials: 'same-origin',
       method: 'POST',
       body: formPayload,
@@ -76,43 +66,20 @@ class NewPc extends Component {
   }
 
   render() {
+
     return (
       <div className='title-tile'>
-      <h1> Make your Character</h1>
+      <h1> Make your Campaign</h1>
       <form onSubmit={this.handleSubmit}>
 
         <label className="pc-new-feature-tile">
-          <h3>Character Name:</h3>
+          <h3>Campaign Name:</h3>
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
         </label>
 
         <label className="pc-new-feature-tile">
-          <h3>Character Level: </h3>
-          (between 1 and 20)
-          <input type="number" name= "level" min="1" max="20" value={this.state.level} onChange={this.handleChange} />
-        </label>
-
-        <label className="pc-new-feature-tile">
-         <h3>Choose your Characters Class:</h3>
-         <select name="class" value={this.state.class} onChange={this.handleChange}>
-           <option value="bard">Bard</option>
-           <option value="barbarian">Barbarian</option>
-           <option value="cleric">Cleric</option>
-           <option value="druid">Druid</option>
-           <option value="fighter">Fighter</option>
-           <option value="monk">Monk</option>
-           <option value="paladin">Paladin</option>
-           <option value="ranger">Ranger</option>
-           <option value="rogue">Rogue</option>
-           <option value="sorcerer">Sorcerer</option>
-           <option value="warlock">Warlock</option>
-           <option value="wizard">Wizard</option>
-         </select>
-       </label>
-
-        <label className="pc-new-feature-tile">
-          <h3>Character Bio:</h3>
-          <textarea name= "bio" value={this.state.bio} onChange={this.handleChange} />
+          <h3>Short Description:</h3>
+          <textarea name= "description" value={this.state.description} onChange={this.handleChange} />
         </label>
 
         <section >
@@ -139,4 +106,4 @@ class NewPc extends Component {
 }
 
 
-export default NewPc;
+export default NewCampaign;

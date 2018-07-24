@@ -1,17 +1,2 @@
-<h1> Here are all the campaigns that you can choose from </h1>
-
-<% @campaigns.each do |campaign| %>
-
-  <% if current_user.campaign_modules.exclude?(campaign) && current_user.campaigns.exclude?(campaign)%>
-
-    <li> <strong><%= link_to "#{campaign.name}", campaign_path(campaign.id) %></strong></li>
-    <p> DM: <%= campaign.dm.user_name %><p>
-    Players: <% campaign.pcs.each do |pc|%>
-      <p><%= "#{pc.user.user_name} as: #{pc.name}" %></p>
-      <% if pc.avatar %>
-        <%= image_tag "#{pc.avatar}" %>
-      <% end %>
-    <% end %>
-
-  <% end %>
-<% end %>
+<div id="app">
+</div>

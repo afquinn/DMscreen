@@ -34,25 +34,6 @@ class PcIndexContainer extends Component {
       )
       .catch(error => console.error(`Error in fetch: ${error.message}`));
 
-    fetch('/api/v1/campaigns')
-
-    .then(response => {
-      console.log(response)
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw(error);
-        }
-      })
-      .then(response => {
-        return response.json()
-      })
-      .then(body =>
-        this.setState({ allCampaigns: body }),
-      )
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
 
 
       fetch(`/api/v1/users.json`, { credentials: 'same-origin' })
@@ -65,20 +46,31 @@ class PcIndexContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
 
   }
-pc
+
 
   render() {
-    console.log("PcIndexContainer")
     if (this.state.user.current_user){
       let pcs = this.state.allPcs
-      let campaigns = this.state.allCampaigns
+      // let campaigns = this.state.allCampaigns
+      let campaigns = []
       let pcArray;
       let dmArray;
 
-      if (pcs.length > 0) {
-        pcArray = pcs.map((pc) => {
+      // pcs.forEach(function(camp){
+      //   console.log(this.state.user.current_user)
+      //   console.log(camp.pc.user)
+      //   if (this.state.user.current_user === camp.pc.user){
+      //   console.log(camp)}
+      //
+      //
+      //
+      // })
 
+      if (pcs.length > 0) {
+
+        pcArray = pcs.map((pc) => {
           if (this.state.user.current_user.user_name === pc.user.user_name) {
+            let currentCamp = pc.campaign
             return(
               <PcIndexTile
               name={pc.name}
@@ -95,12 +87,11 @@ pc
           }
         })
       }
-
-
       if (campaigns.length > 0) {
+        console.log("yes")
         dmArray = campaigns.map((campaign) => {
 
-          if (this.state.user.current_user.email === campaign.dm.email) {
+         // if (this.state.user.current_user.email === campaign.dm.email) {
             return(
 
               <CampaignIndexTile
@@ -114,26 +105,31 @@ pc
               />
 
             )
-          }
+          // }
         })
-      }
+      } else {console.log("no")}
 
       return(
         <div>
           <div className="homes-screen-tiles">
             <div className="title-tile">
-              <h1>Campaigns you are in</h1>
+              <h1>Your Player Characters</h1>
             </div>
             { pcArray }
             <div className="new-pc">
               <Link to={`/pcs/new`}>
-                <p> Make a New PC </p>
+                <p> Make a brand spankin new PC </p>
               </Link>
             </div>
             <div className="title-tile">
-              <h1>Campaigns you are running</h1>
+              <h1>Dungeons</h1>
             </div>
             { dmArray }
+            <div className="campaign-dungeon-link">
+              <Link to={`/campaigns/1/dungeons/1/rooms/1`}>
+                <p> The Forgetten Forge (levels 3-5)</p>
+              </Link>
+            </div>
           </div>
 
         </div>
